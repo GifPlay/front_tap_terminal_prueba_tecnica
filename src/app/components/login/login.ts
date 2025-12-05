@@ -7,20 +7,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
-import { Router } from '@angular/router'; 
+import { Router, RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.html',
- imports: [ 
-  FormsModule,
-  CommonModule,
-  ReactiveFormsModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule
+ imports: [
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    RouterLink
 ],
   styleUrls: ['./login.css']
 })
@@ -58,6 +59,10 @@ export class LoginComponent {
   logout() {
     this.authService.logout();
     alert('Sesión cerrada');
+  }
+
+  forgetPassword() {
+   this.router.navigate(['/forgot-password']);
   }
 }
 

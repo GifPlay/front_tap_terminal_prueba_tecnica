@@ -5,9 +5,15 @@ import { Layaout } from './components/layaout/layaout';
 import { IndexUsuarios } from './components/usuarios/index-usuarios/index-usuarios';
 import { PerfilesComponent } from './components/perfiles/perfiles';
 import { AuthGuard } from './auth/auth-guard';
+import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password';
+import { ResetPasswordComponent } from './components/auth/reset-password/reset-password';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+
+
   {
     path: '',
     component: Layaout,
