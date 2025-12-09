@@ -1,6 +1,6 @@
 <div class="mb-3 ml-3 mr-3 mt-3">
   <h2 mat-dialog-title>
-    {{ data?.id ? 'Editar Usuario' : 'Nuevo Usuario' }}
+    {{ data?.id ? 'Editar Producto' : 'Nuevo Producto' }}
   </h2>
 
   <form [formGroup]="form">
@@ -12,53 +12,29 @@
 
     <!-- Usuario (email) -->
     <div>
-      <label>Correo electrónico:</label>
-      <input type="email" class="form-control" formControlName="usuario" />
-      <div *ngIf="form.get('usuario')?.invalid && form.get('usuario')?.touched" class="text-danger">
-        Correo válido requerido
+      <label>Producto:</label>
+      <input type="text" class="form-control" formControlName="producto" />
+      <div *ngIf="form.get('producto')?.invalid && form.get('producto')?.touched" class="text-danger">
+        Nombre válido requerido
       </div>
     </div>
 
     <!-- Nombre -->
     <div>
-      <label>Nombre:</label>
-      <input class="form-control" formControlName="nombre" />
-      <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="text-danger">
+      <label>Marca:</label>
+      <input class="form-control" formControlName="marca" />
+      <div *ngIf="form.get('marca')?.invalid && form.get('marca')?.touched" class="text-danger">
         Nombre requerido
       </div>
     </div>
 
     <!-- Teléfono -->
     <div>
-      <label>Teléfono:</label>
-      <input type="tel" class="form-control" formControlName="telefono" />
-      <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="text-danger">
-        Teléfono requerido
+      <label>Precio:</label>
+      <input type="number" class="form-control" formControlName="precio" max="999" min="0"/>
+      <div *ngIf="form.get('precio')?.invalid && form.get('precio')?.touched" class="text-danger">
+        NUMERO INVALIDO ENTRE 0 Y 999
       </div>
-    </div>
-
-    <!-- Foto de perfil -->
-    <div>
-      <label>Foto de perfil:</label>
-      <input class="form-control" formControlName="fotoPerfil" />
-    </div>
-
-    <!-- Password (solo requerido si es nuevo usuario) -->
-    <div *ngIf="!data?.id">
-      <label>Password:</label>
-      <input type="password" class="form-control" formControlName="password" />
-      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="text-danger">
-        Password requerido (mínimo 6 caracteres)
-      </div>
-    </div>
-
-    <!-- Role -->
-    <div>
-      <label>Rol:</label>
-      <select class="form-control" formControlName="role">
-        <option value="admin">Admin</option>
-        <option value="user">Usuario</option>
-      </select>
     </div>
 
     <!-- Fechas -->
