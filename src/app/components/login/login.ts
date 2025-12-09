@@ -21,7 +21,7 @@ import { Router, RouterLink } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    RouterLink
+    MatSnackBarModule,
 ],
   styleUrls: ['./login.css']
 })

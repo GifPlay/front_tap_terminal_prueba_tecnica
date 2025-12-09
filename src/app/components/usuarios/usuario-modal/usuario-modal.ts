@@ -48,6 +48,7 @@ export class UsuarioModal {
         this.usuarioService.createUsuario(usuario).subscribe({
           next: (res) => {
             if( res.code === 205 ){
+              console.log(res.errors);
               this.snackBar.open('res.message', 'Cerrar', { duration: 3000 });
             }
             this.snackBar.open('Usuario creado', 'Cerrar', { duration: 3000 });
